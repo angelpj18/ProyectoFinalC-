@@ -51,6 +51,8 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -173,23 +175,74 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Alquiler.cs">
+      <DependentUpon>ReservaAlquilerModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AlquilerDetalle.cs">
+      <DependentUpon>ReservaAlquilerModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Categoria.cs">
+      <DependentUpon>ReservaAlquilerModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Cliente.cs">
+      <DependentUpon>ReservaAlquilerModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Habitacion.cs">
+      <DependentUpon>ReservaAlquilerModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Piso.cs">
+      <DependentUpon>ReservaAlquilerModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reserva.cs">
+      <DependentUpon>ReservaAlquilerModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ReservaAlquilerModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReservaAlquilerModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ReservaAlquilerModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReservaAlquilerModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ReservaAlquilerModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReservaAlquilerModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="ReservaDetalle.cs">
+      <DependentUpon>ReservaAlquilerModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Startup.cs" />
+    <Compile Include="Sucursal.cs">
+      <DependentUpon>ReservaAlquilerModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sysdiagrams.cs">
+      <DependentUpon>ReservaAlquilerModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TipoHabitacion.cs">
+      <DependentUpon>ReservaAlquilerModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Usuario.cs">
+      <DependentUpon>ReservaAlquilerModel.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
@@ -200,8 +253,25 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="ReservaAlquilerModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ReservaAlquilerModel.edmx</DependentUpon>
+      <LastGenOutput>ReservaAlquilerModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="ReservaAlquilerModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ReservaAlquilerModel.edmx</DependentUpon>
+      <LastGenOutput>ReservaAlquilerModel.cs</LastGenOutput>
+    </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <EntityDeploy Include="ReservaAlquilerModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ReservaAlquilerModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="ReservaAlquilerModel.edmx.diagram">
+      <DependentUpon>ReservaAlquilerModel.edmx</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -263,6 +333,9 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.3.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
