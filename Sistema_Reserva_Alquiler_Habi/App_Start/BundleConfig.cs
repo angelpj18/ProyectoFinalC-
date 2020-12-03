@@ -25,6 +25,31 @@ namespace Sistema_Reserva_Alquiler_Habi
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/site.css"));
+
+
+
+
+            #region Template Desing
+
+            bundles.Add(new ScriptBundle("~/template/js").Include(
+                        "~/Scripts/jquery-1.10.2.js",
+                        "~/Scripts/bootstrap.min.js",
+                        "~/Scripts/jquery.isotope.min.js",
+                         "~/Scripts/jquery.prettyPhoto.js",
+                         "~/Scripts/custom.js"));
+
+            bundles.Add(new StyleBundle("~/template/css").Include(
+
+                     "~/Content/css/bootstrap.css",
+                     "~/Content/css/font-awesome.min.css",
+                     "~/Content/css/font-awesome-animation.css",
+                     "~/Content/css/prettyPhoto.css",
+                       "~/Content/css/style.css"
+                     ));
+
+            #endregion
+
+
         }
     }
 }
