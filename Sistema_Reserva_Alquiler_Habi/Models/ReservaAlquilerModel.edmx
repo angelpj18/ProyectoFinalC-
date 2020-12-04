@@ -19,7 +19,7 @@
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="habitacion" Type="int" Nullable="false" />
           <Property Name="precioCategoria" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="precioTipoHabitacion" Type="varchar" MaxLength="50" Nullable="false" />
@@ -29,7 +29,7 @@
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="descripcion" Type="varchar" MaxLength="20" />
           <Property Name="precioCategoria" Type="varchar" MaxLength="20" />
         </EntityType>
@@ -44,13 +44,22 @@
           <Property Name="telefono" Type="varchar" MaxLength="50" />
           <Property Name="email" Type="varchar" MaxLength="50" />
         </EntityType>
+        <EntityType Name="Consulta">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="nombre" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="correo" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="consulta" Type="varchar" MaxLength="250" Nullable="false" />
+        </EntityType>
         <EntityType Name="Habitacion">
           <Key>
-            <PropertyRef Name="id" />
+            <PropertyRef Name="Id" />
           </Key>
-          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="descripcion" Type="varchar" MaxLength="50" />
-          <Property Name="categoria" Type="int" />
+          <Property Name="categoria" Type="int" Nullable="false" />
           <Property Name="piso" Type="int" />
           <Property Name="habilitado" Type="int" />
         </EntityType>
@@ -80,19 +89,19 @@
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="tipoHabitacion" Type="int" Nullable="false" />
           <Property Name="categoria" Type="int" />
-          <Property Name="cantidad" Type="varchar" MaxLength="50" />
+          <Property Name="cantidad" Type="int" />
           <Property Name="reserva_id" Type="int" />
         </EntityType>
         <EntityType Name="Sucursal">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="int" Nullable="false" />
-          <Property Name="NroSucursal" Type="varchar" MaxLength="10" Nullable="false" />
-          <Property Name="Direccion" Type="varchar" MaxLength="30" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NroSucursal" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Direccion" Type="varchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
@@ -108,7 +117,7 @@
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Descripcion" Type="varchar" MaxLength="20" />
           <Property Name="precioTipoHab" Type="float" Nullable="false" />
         </EntityType>
@@ -121,67 +130,19 @@
           <Property Name="contrasena" Type="varchar" MaxLength="50" />
           <Property Name="email" Type="varchar" MaxLength="50" />
         </EntityType>
-        <Association Name="FK_Alquiler_Reserva">
-          <End Role="Reserva" Type="Self.Reserva" Multiplicity="1" />
-          <End Role="Alquiler" Type="Self.Alquiler" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Reserva">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="Alquiler">
-              <PropertyRef Name="reserva_id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_AlquilerDetalle_Alquiler">
-          <End Role="Alquiler" Type="Self.Alquiler" Multiplicity="0..1" />
-          <End Role="AlquilerDetalle" Type="Self.AlquilerDetalle" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Alquiler">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="AlquilerDetalle">
-              <PropertyRef Name="alquiler_id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_AlquilerDetalle_Habitacion">
-          <End Role="Habitacion" Type="Self.Habitacion" Multiplicity="1" />
-          <End Role="AlquilerDetalle" Type="Self.AlquilerDetalle" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Habitacion">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="AlquilerDetalle">
-              <PropertyRef Name="habitacion" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Habitacion_Categoria">
-          <End Role="Categoria" Type="Self.Categoria" Multiplicity="0..1" />
-          <End Role="Habitacion" Type="Self.Habitacion" Multiplicity="*" />
+        <Association Name="FK_categoria_Habitacion">
+          <End Role="Categoria" Type="Self.Categoria" Multiplicity="1" />
+          <End Role="Habitacion" Type="Self.Habitacion" Multiplicity="0..1" />
           <ReferentialConstraint>
             <Principal Role="Categoria">
               <PropertyRef Name="Id" />
             </Principal>
             <Dependent Role="Habitacion">
-              <PropertyRef Name="categoria" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Habitacion_Piso">
-          <End Role="Piso" Type="Self.Piso" Multiplicity="0..1" />
-          <End Role="Habitacion" Type="Self.Habitacion" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Piso">
               <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="Habitacion">
-              <PropertyRef Name="piso" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Reserva_Cliente">
+        <Association Name="FK_Cliente_Reserva">
           <End Role="Cliente" Type="Self.Cliente" Multiplicity="1" />
           <End Role="Reserva" Type="Self.Reserva" Multiplicity="*" />
           <ReferentialConstraint>
@@ -193,15 +154,15 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Reserva_Sucursal">
-          <End Role="Sucursal" Type="Self.Sucursal" Multiplicity="1" />
-          <End Role="Reserva" Type="Self.Reserva" Multiplicity="*" />
+        <Association Name="FK_piso_Habitacion">
+          <End Role="Piso" Type="Self.Piso" Multiplicity="0..1" />
+          <End Role="Habitacion" Type="Self.Habitacion" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="Sucursal">
+            <Principal Role="Piso">
               <PropertyRef Name="Id" />
             </Principal>
-            <Dependent Role="Reserva">
-              <PropertyRef Name="sucursal" />
+            <Dependent Role="Habitacion">
+              <PropertyRef Name="piso" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -241,11 +202,24 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_Sucursal_Reserva">
+          <End Role="Sucursal" Type="Self.Sucursal" Multiplicity="1" />
+          <End Role="Reserva" Type="Self.Reserva" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sucursal">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Reserva">
+              <PropertyRef Name="sucursal" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityContainer Name="ReservaAlquilerModelStoreContainer">
           <EntitySet Name="Alquiler" EntityType="Self.Alquiler" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="AlquilerDetalle" EntityType="Self.AlquilerDetalle" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Categoria" EntityType="Self.Categoria" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Cliente" EntityType="Self.Cliente" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Consulta" EntityType="Self.Consulta" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Habitacion" EntityType="Self.Habitacion" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Piso" EntityType="Self.Piso" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Reserva" EntityType="Self.Reserva" Schema="dbo" store:Type="Tables" />
@@ -254,33 +228,17 @@
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TipoHabitacion" EntityType="Self.TipoHabitacion" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Usuario" EntityType="Self.Usuario" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK_Alquiler_Reserva" Association="Self.FK_Alquiler_Reserva">
-            <End Role="Reserva" EntitySet="Reserva" />
-            <End Role="Alquiler" EntitySet="Alquiler" />
-          </AssociationSet>
-          <AssociationSet Name="FK_AlquilerDetalle_Alquiler" Association="Self.FK_AlquilerDetalle_Alquiler">
-            <End Role="Alquiler" EntitySet="Alquiler" />
-            <End Role="AlquilerDetalle" EntitySet="AlquilerDetalle" />
-          </AssociationSet>
-          <AssociationSet Name="FK_AlquilerDetalle_Habitacion" Association="Self.FK_AlquilerDetalle_Habitacion">
-            <End Role="Habitacion" EntitySet="Habitacion" />
-            <End Role="AlquilerDetalle" EntitySet="AlquilerDetalle" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Habitacion_Categoria" Association="Self.FK_Habitacion_Categoria">
+          <AssociationSet Name="FK_categoria_Habitacion" Association="Self.FK_categoria_Habitacion">
             <End Role="Categoria" EntitySet="Categoria" />
             <End Role="Habitacion" EntitySet="Habitacion" />
           </AssociationSet>
-          <AssociationSet Name="FK_Habitacion_Piso" Association="Self.FK_Habitacion_Piso">
-            <End Role="Piso" EntitySet="Piso" />
-            <End Role="Habitacion" EntitySet="Habitacion" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Reserva_Cliente" Association="Self.FK_Reserva_Cliente">
+          <AssociationSet Name="FK_Cliente_Reserva" Association="Self.FK_Cliente_Reserva">
             <End Role="Cliente" EntitySet="Cliente" />
             <End Role="Reserva" EntitySet="Reserva" />
           </AssociationSet>
-          <AssociationSet Name="FK_Reserva_Sucursal" Association="Self.FK_Reserva_Sucursal">
-            <End Role="Sucursal" EntitySet="Sucursal" />
-            <End Role="Reserva" EntitySet="Reserva" />
+          <AssociationSet Name="FK_piso_Habitacion" Association="Self.FK_piso_Habitacion">
+            <End Role="Piso" EntitySet="Piso" />
+            <End Role="Habitacion" EntitySet="Habitacion" />
           </AssociationSet>
           <AssociationSet Name="FK_ReservaDetalle_Categoria" Association="Self.FK_ReservaDetalle_Categoria">
             <End Role="Categoria" EntitySet="Categoria" />
@@ -293,6 +251,10 @@
           <AssociationSet Name="FK_ReservaDetalle_TipoHabitacion" Association="Self.FK_ReservaDetalle_TipoHabitacion">
             <End Role="TipoHabitacion" EntitySet="TipoHabitacion" />
             <End Role="ReservaDetalle" EntitySet="ReservaDetalle" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Sucursal_Reserva" Association="Self.FK_Sucursal_Reserva">
+            <End Role="Sucursal" EntitySet="Sucursal" />
+            <End Role="Reserva" EntitySet="Reserva" />
           </AssociationSet>
         </EntityContainer>
       </Schema>
@@ -309,29 +271,25 @@
           <Property Name="FechaAlquilerHasta" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="TipoAlquiler" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="reserva_id" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Reserva" Relationship="Self.FK_Alquiler_Reserva" FromRole="Alquiler" ToRole="Reserva" />
-          <NavigationProperty Name="AlquilerDetalle" Relationship="Self.FK_AlquilerDetalle_Alquiler" FromRole="Alquiler" ToRole="AlquilerDetalle" />
         </EntityType>
         <EntityType Name="AlquilerDetalle">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="habitacion" Type="Int32" Nullable="false" />
           <Property Name="precioCategoria" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="precioTipoHabitacion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="alquiler_id" Type="Int32" />
-          <NavigationProperty Name="Alquiler" Relationship="Self.FK_AlquilerDetalle_Alquiler" FromRole="AlquilerDetalle" ToRole="Alquiler" />
-          <NavigationProperty Name="Habitacion1" Relationship="Self.FK_AlquilerDetalle_Habitacion" FromRole="AlquilerDetalle" ToRole="Habitacion" />
         </EntityType>
         <EntityType Name="Categoria">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="descripcion" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="precioCategoria" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="Habitacion" Relationship="Self.FK_Habitacion_Categoria" FromRole="Categoria" ToRole="Habitacion" />
+          <NavigationProperty Name="Habitacion" Relationship="Self.FK_categoria_Habitacion" FromRole="Categoria" ToRole="Habitacion" />
           <NavigationProperty Name="ReservaDetalle" Relationship="Self.FK_ReservaDetalle_Categoria" FromRole="Categoria" ToRole="ReservaDetalle" />
         </EntityType>
         <EntityType Name="Cliente">
@@ -344,20 +302,28 @@
           <Property Name="direccion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="telefono" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="Reserva" Relationship="Self.FK_Reserva_Cliente" FromRole="Cliente" ToRole="Reserva" />
+          <NavigationProperty Name="Reserva" Relationship="Self.FK_Cliente_Reserva" FromRole="Cliente" ToRole="Reserva" />
+        </EntityType>
+        <EntityType Name="Consulta">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="correo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="consulta1" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
         </EntityType>
         <EntityType Name="Habitacion">
           <Key>
-            <PropertyRef Name="id" />
+            <PropertyRef Name="Id" />
           </Key>
-          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="descripcion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="categoria" Type="Int32" />
+          <Property Name="categoria" Type="Int32" Nullable="false" />
           <Property Name="piso" Type="Int32" />
           <Property Name="habilitado" Type="Int32" />
-          <NavigationProperty Name="AlquilerDetalle" Relationship="Self.FK_AlquilerDetalle_Habitacion" FromRole="Habitacion" ToRole="AlquilerDetalle" />
-          <NavigationProperty Name="Categoria1" Relationship="Self.FK_Habitacion_Categoria" FromRole="Habitacion" ToRole="Categoria" />
-          <NavigationProperty Name="Piso1" Relationship="Self.FK_Habitacion_Piso" FromRole="Habitacion" ToRole="Piso" />
+          <NavigationProperty Name="Categoria1" Relationship="Self.FK_categoria_Habitacion" FromRole="Habitacion" ToRole="Categoria" />
+          <NavigationProperty Name="Piso1" Relationship="Self.FK_piso_Habitacion" FromRole="Habitacion" ToRole="Piso" />
         </EntityType>
         <EntityType Name="Piso">
           <Key>
@@ -366,7 +332,7 @@
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="NroPiso" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Descripcion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="Habitacion" Relationship="Self.FK_Habitacion_Piso" FromRole="Piso" ToRole="Habitacion" />
+          <NavigationProperty Name="Habitacion" Relationship="Self.FK_piso_Habitacion" FromRole="Piso" ToRole="Habitacion" />
         </EntityType>
         <EntityType Name="Reserva">
           <Key>
@@ -381,19 +347,18 @@
           <Property Name="cliente" Type="Int32" Nullable="false" />
           <Property Name="sucursal" Type="Int32" Nullable="false" />
           <Property Name="tipoReserva" Type="Int32" />
-          <NavigationProperty Name="Alquiler" Relationship="Self.FK_Alquiler_Reserva" FromRole="Reserva" ToRole="Alquiler" />
-          <NavigationProperty Name="Cliente1" Relationship="Self.FK_Reserva_Cliente" FromRole="Reserva" ToRole="Cliente" />
-          <NavigationProperty Name="Sucursal1" Relationship="Self.FK_Reserva_Sucursal" FromRole="Reserva" ToRole="Sucursal" />
+          <NavigationProperty Name="Cliente1" Relationship="Self.FK_Cliente_Reserva" FromRole="Reserva" ToRole="Cliente" />
           <NavigationProperty Name="ReservaDetalle" Relationship="Self.FK_ReservaDetalle_Reserva" FromRole="Reserva" ToRole="ReservaDetalle" />
+          <NavigationProperty Name="Sucursal1" Relationship="Self.FK_Sucursal_Reserva" FromRole="Reserva" ToRole="Sucursal" />
         </EntityType>
         <EntityType Name="ReservaDetalle">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="tipoHabitacion" Type="Int32" Nullable="false" />
           <Property Name="categoria" Type="Int32" />
-          <Property Name="cantidad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="cantidad" Type="Int32" />
           <Property Name="reserva_id" Type="Int32" />
           <NavigationProperty Name="Categoria1" Relationship="Self.FK_ReservaDetalle_Categoria" FromRole="ReservaDetalle" ToRole="Categoria" />
           <NavigationProperty Name="Reserva" Relationship="Self.FK_ReservaDetalle_Reserva" FromRole="ReservaDetalle" ToRole="Reserva" />
@@ -403,10 +368,10 @@
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" />
-          <Property Name="NroSucursal" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Direccion" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="Reserva" Relationship="Self.FK_Reserva_Sucursal" FromRole="Sucursal" ToRole="Reserva" />
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NroSucursal" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Direccion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Reserva" Relationship="Self.FK_Sucursal_Reserva" FromRole="Sucursal" ToRole="Reserva" />
         </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
@@ -422,7 +387,7 @@
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Descripcion" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="precioTipoHab" Type="Double" Nullable="false" />
           <NavigationProperty Name="ReservaDetalle" Relationship="Self.FK_ReservaDetalle_TipoHabitacion" FromRole="TipoHabitacion" ToRole="ReservaDetalle" />
@@ -436,51 +401,15 @@
           <Property Name="contrasena" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
-        <Association Name="FK_Alquiler_Reserva">
-          <End Role="Reserva" Type="Self.Reserva" Multiplicity="1" />
-          <End Role="Alquiler" Type="Self.Alquiler" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Reserva">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="Alquiler">
-              <PropertyRef Name="reserva_id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_AlquilerDetalle_Alquiler">
-          <End Role="Alquiler" Type="Self.Alquiler" Multiplicity="0..1" />
-          <End Role="AlquilerDetalle" Type="Self.AlquilerDetalle" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Alquiler">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="AlquilerDetalle">
-              <PropertyRef Name="alquiler_id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_AlquilerDetalle_Habitacion">
-          <End Role="Habitacion" Type="Self.Habitacion" Multiplicity="1" />
-          <End Role="AlquilerDetalle" Type="Self.AlquilerDetalle" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Habitacion">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="AlquilerDetalle">
-              <PropertyRef Name="habitacion" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Habitacion_Categoria">
-          <End Role="Categoria" Type="Self.Categoria" Multiplicity="0..1" />
-          <End Role="Habitacion" Type="Self.Habitacion" Multiplicity="*" />
+        <Association Name="FK_categoria_Habitacion">
+          <End Role="Categoria" Type="Self.Categoria" Multiplicity="1" />
+          <End Role="Habitacion" Type="Self.Habitacion" Multiplicity="0..1" />
           <ReferentialConstraint>
             <Principal Role="Categoria">
               <PropertyRef Name="Id" />
             </Principal>
             <Dependent Role="Habitacion">
-              <PropertyRef Name="categoria" />
+              <PropertyRef Name="Id" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -496,7 +425,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Reserva_Cliente">
+        <Association Name="FK_Cliente_Reserva">
           <End Role="Cliente" Type="Self.Cliente" Multiplicity="1" />
           <End Role="Reserva" Type="Self.Reserva" Multiplicity="*" />
           <ReferentialConstraint>
@@ -508,7 +437,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Habitacion_Piso">
+        <Association Name="FK_piso_Habitacion">
           <End Role="Piso" Type="Self.Piso" Multiplicity="0..1" />
           <End Role="Habitacion" Type="Self.Habitacion" Multiplicity="*" />
           <ReferentialConstraint>
@@ -517,18 +446,6 @@
             </Principal>
             <Dependent Role="Habitacion">
               <PropertyRef Name="piso" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Reserva_Sucursal">
-          <End Role="Sucursal" Type="Self.Sucursal" Multiplicity="1" />
-          <End Role="Reserva" Type="Self.Reserva" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Sucursal">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="Reserva">
-              <PropertyRef Name="sucursal" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -544,6 +461,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_Sucursal_Reserva">
+          <End Role="Sucursal" Type="Self.Sucursal" Multiplicity="1" />
+          <End Role="Reserva" Type="Self.Reserva" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sucursal">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Reserva">
+              <PropertyRef Name="sucursal" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_ReservaDetalle_TipoHabitacion">
           <End Role="TipoHabitacion" Type="Self.TipoHabitacion" Multiplicity="1" />
           <End Role="ReservaDetalle" Type="Self.ReservaDetalle" Multiplicity="*" />
@@ -556,11 +485,12 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="ReservaAlquilerEntities2" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="ReservaAlquilerEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Alquiler" EntityType="Self.Alquiler" />
           <EntitySet Name="AlquilerDetalle" EntityType="Self.AlquilerDetalle" />
           <EntitySet Name="Categoria" EntityType="Self.Categoria" />
           <EntitySet Name="Cliente" EntityType="Self.Cliente" />
+          <EntitySet Name="Consulta" EntityType="Self.Consulta" />
           <EntitySet Name="Habitacion" EntityType="Self.Habitacion" />
           <EntitySet Name="Piso" EntityType="Self.Piso" />
           <EntitySet Name="Reserva" EntityType="Self.Reserva" />
@@ -569,19 +499,7 @@
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
           <EntitySet Name="TipoHabitacion" EntityType="Self.TipoHabitacion" />
           <EntitySet Name="Usuario" EntityType="Self.Usuario" />
-          <AssociationSet Name="FK_Alquiler_Reserva" Association="Self.FK_Alquiler_Reserva">
-            <End Role="Reserva" EntitySet="Reserva" />
-            <End Role="Alquiler" EntitySet="Alquiler" />
-          </AssociationSet>
-          <AssociationSet Name="FK_AlquilerDetalle_Alquiler" Association="Self.FK_AlquilerDetalle_Alquiler">
-            <End Role="Alquiler" EntitySet="Alquiler" />
-            <End Role="AlquilerDetalle" EntitySet="AlquilerDetalle" />
-          </AssociationSet>
-          <AssociationSet Name="FK_AlquilerDetalle_Habitacion" Association="Self.FK_AlquilerDetalle_Habitacion">
-            <End Role="Habitacion" EntitySet="Habitacion" />
-            <End Role="AlquilerDetalle" EntitySet="AlquilerDetalle" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Habitacion_Categoria" Association="Self.FK_Habitacion_Categoria">
+          <AssociationSet Name="FK_categoria_Habitacion" Association="Self.FK_categoria_Habitacion">
             <End Role="Categoria" EntitySet="Categoria" />
             <End Role="Habitacion" EntitySet="Habitacion" />
           </AssociationSet>
@@ -589,21 +507,21 @@
             <End Role="Categoria" EntitySet="Categoria" />
             <End Role="ReservaDetalle" EntitySet="ReservaDetalle" />
           </AssociationSet>
-          <AssociationSet Name="FK_Reserva_Cliente" Association="Self.FK_Reserva_Cliente">
+          <AssociationSet Name="FK_Cliente_Reserva" Association="Self.FK_Cliente_Reserva">
             <End Role="Cliente" EntitySet="Cliente" />
             <End Role="Reserva" EntitySet="Reserva" />
           </AssociationSet>
-          <AssociationSet Name="FK_Habitacion_Piso" Association="Self.FK_Habitacion_Piso">
+          <AssociationSet Name="FK_piso_Habitacion" Association="Self.FK_piso_Habitacion">
             <End Role="Piso" EntitySet="Piso" />
             <End Role="Habitacion" EntitySet="Habitacion" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Reserva_Sucursal" Association="Self.FK_Reserva_Sucursal">
-            <End Role="Sucursal" EntitySet="Sucursal" />
-            <End Role="Reserva" EntitySet="Reserva" />
           </AssociationSet>
           <AssociationSet Name="FK_ReservaDetalle_Reserva" Association="Self.FK_ReservaDetalle_Reserva">
             <End Role="Reserva" EntitySet="Reserva" />
             <End Role="ReservaDetalle" EntitySet="ReservaDetalle" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Sucursal_Reserva" Association="Self.FK_Sucursal_Reserva">
+            <End Role="Sucursal" EntitySet="Sucursal" />
+            <End Role="Reserva" EntitySet="Reserva" />
           </AssociationSet>
           <AssociationSet Name="FK_ReservaDetalle_TipoHabitacion" Association="Self.FK_ReservaDetalle_TipoHabitacion">
             <End Role="TipoHabitacion" EntitySet="TipoHabitacion" />
@@ -615,7 +533,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="ReservaAlquilerModelStoreContainer" CdmEntityContainer="ReservaAlquilerEntities2">
+        <EntityContainerMapping StorageEntityContainer="ReservaAlquilerModelStoreContainer" CdmEntityContainer="ReservaAlquilerEntities">
           <EntitySetMapping Name="Alquiler">
             <EntityTypeMapping TypeName="ReservaAlquilerModel.Alquiler">
               <MappingFragment StoreEntitySet="Alquiler">
@@ -659,10 +577,20 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="Consulta">
+            <EntityTypeMapping TypeName="ReservaAlquilerModel.Consulta">
+              <MappingFragment StoreEntitySet="Consulta">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="correo" ColumnName="correo" />
+                <ScalarProperty Name="consulta1" ColumnName="consulta" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="Habitacion">
             <EntityTypeMapping TypeName="ReservaAlquilerModel.Habitacion">
               <MappingFragment StoreEntitySet="Habitacion">
-                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="descripcion" ColumnName="descripcion" />
                 <ScalarProperty Name="categoria" ColumnName="categoria" />
                 <ScalarProperty Name="piso" ColumnName="piso" />

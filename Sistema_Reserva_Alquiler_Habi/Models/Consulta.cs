@@ -12,12 +12,11 @@ namespace Sistema_Reserva_Alquiler_Habi.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class AlquilerDetalle
+    public partial class Consulta
     {
         public int Id { get; set; }
-        public int habitacion { get; set; }
-        public string precioCategoria { get; set; }
-        public string precioTipoHabitacion { get; set; }
-        public Nullable<int> alquiler_id { get; set; }
+        public string nombre { get; set; }
+        public string correo { get; set; }
+        public string consulta1 { get; set; }
     }
 }
