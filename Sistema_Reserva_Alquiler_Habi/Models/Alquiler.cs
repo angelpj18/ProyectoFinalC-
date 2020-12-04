@@ -14,20 +14,10 @@ namespace Sistema_Reserva_Alquiler_Habi.Models
     
     public partial class Alquiler
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Alquiler()
-        {
-            this.AlquilerDetalle = new HashSet<AlquilerDetalle>();
-        }
-    
         public int Id { get; set; }
         public System.DateTime FechaAlquilerDesde { get; set; }
         public System.DateTime FechaAlquilerHasta { get; set; }
         public string TipoAlquiler { get; set; }
         public int reserva_id { get; set; }
-    
-        public virtual Reserva Reserva { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<AlquilerDetalle> AlquilerDetalle { get; set; }
     }
 }

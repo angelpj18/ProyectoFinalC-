@@ -4,28 +4,26 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="278bece9c8b04f06b73ee73e10ad9210" Name="Diagram1">
-        <EntityTypeShape EntityType="ReservaAlquilerModel.Alquiler" Width="1.5" PointX="5.25" PointY="4.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="ReservaAlquilerModel.AlquilerDetalle" Width="1.5" PointX="7.5" PointY="4.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="ReservaAlquilerModel.Categoria" Width="1.5" PointX="3" PointY="8.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="ReservaAlquilerModel.Cliente" Width="1.5" PointX="0.75" PointY="4.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="ReservaAlquilerModel.Habitacion" Width="1.5" PointX="5.25" PointY="14.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="ReservaAlquilerModel.Piso" Width="1.5" PointX="3" PointY="15.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="ReservaAlquilerModel.Reserva" Width="1.5" PointX="3" PointY="4.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="ReservaAlquilerModel.ReservaDetalle" Width="1.5" PointX="5.25" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="ReservaAlquilerModel.Sucursal" Width="1.5" PointX="0.75" PointY="2.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="ReservaAlquilerModel.sysdiagrams" Width="1.5" PointX="5.75" PointY="8.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="ReservaAlquilerModel.TipoHabitacion" Width="1.5" PointX="3" PointY="11.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="ReservaAlquilerModel.Usuario" Width="1.5" PointX="7.75" PointY="8.875" IsExpanded="true" />
-        <AssociationConnector Association="ReservaAlquilerModel.FK_Alquiler_Reserva" ManuallyRouted="false" />
-        <AssociationConnector Association="ReservaAlquilerModel.FK_AlquilerDetalle_Alquiler" ManuallyRouted="false" />
-        <AssociationConnector Association="ReservaAlquilerModel.FK_AlquilerDetalle_Habitacion" ManuallyRouted="false" />
-        <AssociationConnector Association="ReservaAlquilerModel.FK_Habitacion_Categoria" ManuallyRouted="false" />
+      <Diagram DiagramId="fd9168940c174b188894e63a00a5ec4a" Name="Diagram1">
+        <EntityTypeShape EntityType="ReservaAlquilerModel.Alquiler" Width="1.5" PointX="5.75" PointY="7.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ReservaAlquilerModel.AlquilerDetalle" Width="1.5" PointX="7.75" PointY="7.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ReservaAlquilerModel.Categoria" Width="1.5" PointX="0.75" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ReservaAlquilerModel.Cliente" Width="1.5" PointX="1.5" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ReservaAlquilerModel.Consulta" Width="1.5" PointX="8.75" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ReservaAlquilerModel.Habitacion" Width="1.5" PointX="3" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ReservaAlquilerModel.Piso" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ReservaAlquilerModel.Reserva" Width="1.5" PointX="3.75" PointY="9.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ReservaAlquilerModel.ReservaDetalle" Width="1.5" PointX="6" PointY="3.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ReservaAlquilerModel.Sucursal" Width="1.5" PointX="1.5" PointY="11.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ReservaAlquilerModel.sysdiagrams" Width="1.5" PointX="8.75" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ReservaAlquilerModel.TipoHabitacion" Width="1.5" PointX="3.75" PointY="14.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ReservaAlquilerModel.Usuario" Width="1.5" PointX="5.75" PointY="10.5" IsExpanded="true" />
+        <AssociationConnector Association="ReservaAlquilerModel.FK_categoria_Habitacion" ManuallyRouted="false" />
         <AssociationConnector Association="ReservaAlquilerModel.FK_ReservaDetalle_Categoria" ManuallyRouted="false" />
-        <AssociationConnector Association="ReservaAlquilerModel.FK_Reserva_Cliente" ManuallyRouted="false" />
-        <AssociationConnector Association="ReservaAlquilerModel.FK_Habitacion_Piso" ManuallyRouted="false" />
-        <AssociationConnector Association="ReservaAlquilerModel.FK_Reserva_Sucursal" ManuallyRouted="false" />
+        <AssociationConnector Association="ReservaAlquilerModel.FK_Cliente_Reserva" ManuallyRouted="false" />
+        <AssociationConnector Association="ReservaAlquilerModel.FK_piso_Habitacion" ManuallyRouted="false" />
         <AssociationConnector Association="ReservaAlquilerModel.FK_ReservaDetalle_Reserva" ManuallyRouted="false" />
+        <AssociationConnector Association="ReservaAlquilerModel.FK_Sucursal_Reserva" ManuallyRouted="false" />
         <AssociationConnector Association="ReservaAlquilerModel.FK_ReservaDetalle_TipoHabitacion" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
