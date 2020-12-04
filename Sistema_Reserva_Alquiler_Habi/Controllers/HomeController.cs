@@ -26,5 +26,11 @@ namespace Sistema_Reserva_Alquiler_Habi.Controllers
 
             return View();
         }
+
+        public ActionResult _Nosotros()
+        {
+
+            return View();
+        }
     }
 }
