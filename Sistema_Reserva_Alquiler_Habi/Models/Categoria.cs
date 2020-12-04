@@ -17,6 +17,7 @@ namespace Sistema_Reserva_Alquiler_Habi.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Categoria()
         {
+            this.Habitacion = new HashSet<Habitacion>();
             this.ReservaDetalle = new HashSet<ReservaDetalle>();
         }
     
@@ -24,7 +25,8 @@ namespace Sistema_Reserva_Alquiler_Habi.Models
         public string descripcion { get; set; }
         public string precioCategoria { get; set; }
     
-        public virtual Habitacion Habitacion { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Habitacion> Habitacion { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ReservaDetalle> ReservaDetalle { get; set; }
     }
