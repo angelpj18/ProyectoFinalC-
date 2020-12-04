@@ -14,20 +14,12 @@ namespace Sistema_Reserva_Alquiler_Habi.Models
     
     public partial class Habitacion
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Habitacion()
-        {
-            this.AlquilerDetalle = new HashSet<AlquilerDetalle>();
-        }
-    
-        public int id { get; set; }
+        public int Id { get; set; }
         public string descripcion { get; set; }
-        public Nullable<int> categoria { get; set; }
+        public int categoria { get; set; }
         public Nullable<int> piso { get; set; }
         public Nullable<int> habilitado { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<AlquilerDetalle> AlquilerDetalle { get; set; }
         public virtual Categoria Categoria1 { get; set; }
         public virtual Piso Piso1 { get; set; }
     }

@@ -17,7 +17,6 @@ namespace Sistema_Reserva_Alquiler_Habi.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Reserva()
         {
-            this.Alquiler = new HashSet<Alquiler>();
             this.ReservaDetalle = new HashSet<ReservaDetalle>();
         }
     
@@ -31,11 +30,9 @@ namespace Sistema_Reserva_Alquiler_Habi.Models
         public int sucursal { get; set; }
         public Nullable<int> tipoReserva { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Alquiler> Alquiler { get; set; }
         public virtual Cliente Cliente1 { get; set; }
-        public virtual Sucursal Sucursal1 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ReservaDetalle> ReservaDetalle { get; set; }
+        public virtual Sucursal Sucursal1 { get; set; }
     }
 }

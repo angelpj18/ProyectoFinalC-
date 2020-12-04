@@ -12,7 +12,7 @@ namespace Sistema_Reserva_Alquiler_Habi.Controllers
 {
     public class ReservasController : Controller
     {
-        private ReservaAlquilerEntities2 db = new ReservaAlquilerEntities2();
+        private ReservaAlquilerEntities db = new ReservaAlquilerEntities();
 
         // GET: Reservas
         public ActionResult Index()
