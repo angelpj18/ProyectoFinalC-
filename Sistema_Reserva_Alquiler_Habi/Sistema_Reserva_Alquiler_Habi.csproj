@@ -255,6 +255,16 @@
     <Content Include="Content\css\prettyPhoto.css" />
     <Content Include="Content\css\style.css" />
     <Content Include="Content\img\1.jpg" />
+    <Content Include="Content\img\Habitaciones\Habi1.png" />
+    <Content Include="Content\img\Habitaciones\habi10.jpg" />
+    <Content Include="Content\img\Habitaciones\habi2.jpg" />
+    <Content Include="Content\img\Habitaciones\habi3.jpg" />
+    <Content Include="Content\img\Habitaciones\habi4.jpg" />
+    <Content Include="Content\img\Habitaciones\habi5.jpg" />
+    <Content Include="Content\img\Habitaciones\habi6.jpg" />
+    <Content Include="Content\img\Habitaciones\habi8.jpg" />
+    <Content Include="Content\img\Habitaciones\habi9.jpg" />
+    <Content Include="Content\img\Habitaciones\habit7.jpg" />
     <Content Include="Content\img\portfolio\big\b1.png" />
     <Content Include="Content\img\portfolio\big\b2.png" />
     <Content Include="Content\img\portfolio\big\b3.png" />

@@ -1,31 +1,243 @@
-﻿@{
-    ViewBag.Title = "Home Page";
-}
+﻿<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html lang="en">
+<!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!--[if IE]>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <![endif]-->
+    <title>Multipager Template- Travelic </title>
+    <!--REQUIRED STYLE SHEETS-->
+    @Styles.Render("~/template/css")
 
-<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET     *** PANDAAAAAAAAAAS HOTEL ****      is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
-</div>
 
-<div class="row">
-    <div class="col-md-4">
-        <h2>Empezando 2</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+</head>
+<body>
+    <!-- NAV SECTION -->
+    <div class="navbar navbar-inverse navbar-fixed-top">
+
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">YOUR LOGO</a>
+            </div>
+
+
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Inicio", "Index", "Home")</li>
+                    <li>@Html.ActionLink("Acerca de", "About", "Home")</li>
+                    <li>@Html.ActionLink("Contacto", "Contact", "Home")</li>
+                </ul>
+                @Html.Partial("_LoginPartial")
+            </div>
+
+
+        </div>
     </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>Modification 2.0 NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+    <!--END NAV SECTION -->
+    <!--HOME SECTION-->
+    <div id="home-sec">
+
+
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-md-12">
+                    <span class="head-main">Travel Template</span>
+                    <h3 class="head-last col-md-4 col-md-offset-4  col-sm-6 col-sm-offset-3">Lorem ipsum dolor sit ametLorem</h3>
+
+
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>Modification 1.0.1.0 ...You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+
+
+    <section id="services-sec">
+        <div class="container">
+            <div class="row ">
+                <div class="text-center g-pad-bottom">
+                    <div class="col-md-4 col-sm-4 alert-info">
+                        <h4>Reserve con confianza</h4>
+                        <p>
+                            Somos concientes de la importancia de la flexibilidad cuando entra en juego la planificación de viajes en el futuro,
+                            y queremos que confíe en nosotros cuando haga una reserva.
+                        </p>
+
+                    </div>
+                    <div class="col-md-4 col-sm-4 alert-success">
+                        <h4>Fantásticas ofertas </h4>
+                        <p>
+                            Comprendemos que, a la hora de planificar los futuros viajes, se necesita flexibilidad.
+                            Puede reservar con confianza, sabiendo que nuestras políticas de cancelación flexible se adaptarán a sus necesidades.
+                        </p>
+
+                    </div>
+
+                    <div class="col-md-4 col-sm-4 alert-danger">
+                        <h4> Salud y seguridad </h4>
+                        <p>
+                            En respuesta a la pandemia de COVID-19, nos hemos asociado con los mejores expertos para implementar
+                            nuevos estándares de seguridad y protocolos y procedimientos operativos y garantizar su seguridad.
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+            <div class="row go-marg">
+                <div class="col-md-4 col-sm-4">
+                    <div class="panel panel-default">
+
+                        <div class="panel-body">
+                            <h4 class="adjst" align="center"> Habitación Individual </h4>
+                            <p>
+                                <img src="~/Content/img/Habitaciones/habi10.jpg" height="300" width="330" />
+                                <b>Esta habitación doble cuenta con aire acondicionado.</b>
+                                <br />
+                                Equipamiento de la habitación:
+                                <br />
+                                - Aire acondicionado
+                            </p>
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-md-4 col-sm-4">
+                    <div class="panel panel-default">
+
+                        <div class="panel-body">
+                            <h4 class="adjst" align="center"> Habitación Doble </h4>
+                            <p>
+                                <img src="~/Content/img/Habitaciones/habi6.jpg" height="300" width="330" />
+                                <b>Esta habitación doble cuenta con aire acondicionado.</b>
+                                <br />
+                                Equipamiento de la habitación:
+                                <br />
+                                - Aire acondicionado
+                            </p>
+
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-md-4 col-sm-4">
+                    <div class="panel panel-default">
+
+                        <div class="panel-body">
+                            <h4 class="adjst" align="center">Habitación King</h4>
+                            <p>
+                                <img src="~/Content/img/Habitaciones/habit7.jpg" height="300" width="330" />
+                                <b>Esta habitación doble cuenta con aire acondicionado.</b>
+                                <br />
+                                Equipamiento de la habitación:
+                                <br />
+                                - Aire acondicionado
+                            </p>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+            <div class="row go-marg">
+                <div class="col-md-4 col-sm-4">
+                    <div class="panel panel-default">
+
+                        <div class="panel-body">
+                            <h4 class="adjst" align="center"> Habitación Individual </h4>
+                            <p>
+                                <img src="~/Content/img/Habitaciones/habi10.jpg" height="300" width="330" />
+                                <b>Esta habitación doble cuenta con aire acondicionado.</b>
+                                <br />
+                                Equipamiento de la habitación:
+                                <br />
+                                - Aire acondicionado
+                            </p>
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-md-4 col-sm-4">
+                    <div class="panel panel-default">
+
+                        <div class="panel-body">
+                            <h4 class="adjst" align="center"> Habitación Doble </h4>
+                            <p>
+                                <img src="~/Content/img/Habitaciones/habi6.jpg" height="300" width="330" />
+                                <b>Esta habitación doble cuenta con aire acondicionado.</b>
+                                <br />
+                                Equipamiento de la habitación:
+                                <br />
+                                - Aire acondicionado
+                            </p>
+
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-md-4 col-sm-4">
+                    <div class="panel panel-default">
+
+                        <div class="panel-body">
+                            <h4 class="adjst" align="center">Habitación King</h4>
+                            <p>
+                                <img src="~/Content/img/Habitaciones/habit7.jpg" height="300" width="330" />
+                                <b>Esta habitación doble cuenta con aire acondicionado.</b>
+                                <br />
+                                Equipamiento de la habitación:
+                                <br />
+                                - Aire acondicionado
+                            </p>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+
+
+
+
+        </div>
+    </section>
+   
+    <div id="footer">
+        2020 www.yourdomain.com | Todos los derechos reservados.
+
     </div>
-</div>
+    <!-- END FOOTER SECTION -->
+    @Scripts.Render("~/template/js")
+
+</body>
+</html>
