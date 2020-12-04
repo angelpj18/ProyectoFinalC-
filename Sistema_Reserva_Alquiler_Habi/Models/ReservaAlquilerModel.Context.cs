@@ -13,10 +13,10 @@ namespace Sistema_Reserva_Alquiler_Habi.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class ReservaAlquilerEntities : DbContext
+    public partial class ReservaAlquilerEntities2 : DbContext
     {
-        public ReservaAlquilerEntities()
-            : base("name=ReservaAlquilerEntities")
+        public ReservaAlquilerEntities2()
+            : base("name=ReservaAlquilerEntities2")
         {
         }
     
@@ -29,7 +29,6 @@ namespace Sistema_Reserva_Alquiler_Habi.Models
         public virtual DbSet<AlquilerDetalle> AlquilerDetalle { get; set; }
         public virtual DbSet<Categoria> Categoria { get; set; }
         public virtual DbSet<Cliente> Cliente { get; set; }
-        public virtual DbSet<Consulta> Consulta { get; set; }
         public virtual DbSet<Habitacion> Habitacion { get; set; }
         public virtual DbSet<Piso> Piso { get; set; }
         public virtual DbSet<Reserva> Reserva { get; set; }

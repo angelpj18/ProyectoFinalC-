@@ -202,9 +202,6 @@
     <Compile Include="Models\Cliente.cs">
       <DependentUpon>ReservaAlquilerModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Consulta.cs">
-      <DependentUpon>ReservaAlquilerModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\Habitacion.cs">
       <DependentUpon>ReservaAlquilerModel.tt</DependentUpon>
     </Compile>

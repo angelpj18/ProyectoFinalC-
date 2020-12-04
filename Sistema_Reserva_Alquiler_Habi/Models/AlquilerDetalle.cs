@@ -19,5 +19,8 @@ namespace Sistema_Reserva_Alquiler_Habi.Models
         public string precioCategoria { get; set; }
         public string precioTipoHabitacion { get; set; }
         public Nullable<int> alquiler_id { get; set; }
+    
+        public virtual Alquiler Alquiler { get; set; }
+        public virtual Habitacion Habitacion1 { get; set; }
     }
 }

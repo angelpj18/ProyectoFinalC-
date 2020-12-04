@@ -17,7 +17,7 @@ namespace Sistema_Reserva_Alquiler_Habi.Models
         public int Id { get; set; }
         public int tipoHabitacion { get; set; }
         public Nullable<int> categoria { get; set; }
-        public Nullable<int> cantidad { get; set; }
+        public string cantidad { get; set; }
         public Nullable<int> reserva_id { get; set; }
     
         public virtual Categoria Categoria1 { get; set; }
