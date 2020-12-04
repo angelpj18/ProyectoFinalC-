@@ -7,21 +7,16 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Sistema_Reserva_Alquiler_Habi
+namespace Sistema_Reserva_Alquiler_Habi.Models
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class ReservaDetalle
+    public partial class Usuario
     {
         public int Id { get; set; }
-        public int tipoHabitacion { get; set; }
-        public Nullable<int> categoria { get; set; }
-        public string cantidad { get; set; }
-        public Nullable<int> reserva_id { get; set; }
-    
-        public virtual Categoria Categoria1 { get; set; }
-        public virtual Reserva Reserva { get; set; }
-        public virtual TipoHabitacion TipoHabitacion1 { get; set; }
+        public string nombreUsu { get; set; }
+        public string contrasena { get; set; }
+        public string email { get; set; }
     }
 }

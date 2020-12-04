@@ -7,24 +7,27 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Sistema_Reserva_Alquiler_Habi
+namespace Sistema_Reserva_Alquiler_Habi.Models
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class TipoHabitacion
+    public partial class Cliente
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public TipoHabitacion()
+        public Cliente()
         {
-            this.ReservaDetalle = new HashSet<ReservaDetalle>();
+            this.Reserva = new HashSet<Reserva>();
         }
     
         public int Id { get; set; }
-        public string Descripcion { get; set; }
-        public double precioTipoHab { get; set; }
+        public string ciCliente { get; set; }
+        public string nombre { get; set; }
+        public string direccion { get; set; }
+        public string telefono { get; set; }
+        public string email { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ReservaDetalle> ReservaDetalle { get; set; }
+        public virtual ICollection<Reserva> Reserva { get; set; }
     }
 }

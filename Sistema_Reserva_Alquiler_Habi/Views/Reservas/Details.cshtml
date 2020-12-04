@@ -1,0 +1,82 @@
+﻿@model Sistema_Reserva_Alquiler_Habi.Models.Reserva
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Reserva</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Descripcion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Descripcion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.estado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.estado)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.fechaInicio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fechaInicio)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.fechaReserva)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fechaReserva)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.fechaFin)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fechaFin)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tipoReserva)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tipoReserva)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cliente1.ciCliente)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cliente1.ciCliente)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Sucursal1.NroSucursal)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Sucursal1.NroSucursal)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

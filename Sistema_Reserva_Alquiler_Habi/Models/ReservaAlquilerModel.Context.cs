@@ -7,16 +7,16 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Sistema_Reserva_Alquiler_Habi
+namespace Sistema_Reserva_Alquiler_Habi.Models
 {
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class ReservaAlquilerEntities : DbContext
+    public partial class ReservaAlquilerEntities2 : DbContext
     {
-        public ReservaAlquilerEntities()
-            : base("name=ReservaAlquilerEntities")
+        public ReservaAlquilerEntities2()
+            : base("name=ReservaAlquilerEntities2")
         {
         }
     

@@ -7,17 +7,20 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Sistema_Reserva_Alquiler_Habi
+namespace Sistema_Reserva_Alquiler_Habi.Models
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class sysdiagrams
+    public partial class AlquilerDetalle
     {
-        public string name { get; set; }
-        public int principal_id { get; set; }
-        public int diagram_id { get; set; }
-        public Nullable<int> version { get; set; }
-        public byte[] definition { get; set; }
+        public int Id { get; set; }
+        public int habitacion { get; set; }
+        public string precioCategoria { get; set; }
+        public string precioTipoHabitacion { get; set; }
+        public Nullable<int> alquiler_id { get; set; }
+    
+        public virtual Alquiler Alquiler { get; set; }
+        public virtual Habitacion Habitacion1 { get; set; }
     }
 }

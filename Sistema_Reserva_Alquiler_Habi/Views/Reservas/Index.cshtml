@@ -1,0 +1,75 @@
+﻿@model IEnumerable<Sistema_Reserva_Alquiler_Habi.Models.Reserva>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Descripcion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.estado)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fechaInicio)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fechaReserva)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fechaFin)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tipoReserva)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Cliente1.ciCliente)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Sucursal1.NroSucursal)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Descripcion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.estado)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fechaInicio)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fechaReserva)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fechaFin)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tipoReserva)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cliente1.ciCliente)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Sucursal1.NroSucursal)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>

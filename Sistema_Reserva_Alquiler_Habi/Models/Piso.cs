@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Sistema_Reserva_Alquiler_Habi
+namespace Sistema_Reserva_Alquiler_Habi.Models
 {
     using System;
     using System.Collections.Generic;

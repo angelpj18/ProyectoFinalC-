@@ -7,27 +7,24 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Sistema_Reserva_Alquiler_Habi
+namespace Sistema_Reserva_Alquiler_Habi.Models
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class Categoria
+    public partial class Sucursal
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Categoria()
+        public Sucursal()
         {
-            this.Habitacion = new HashSet<Habitacion>();
-            this.ReservaDetalle = new HashSet<ReservaDetalle>();
+            this.Reserva = new HashSet<Reserva>();
         }
     
         public int Id { get; set; }
-        public string descripcion { get; set; }
-        public string precioCategoria { get; set; }
+        public string NroSucursal { get; set; }
+        public string Direccion { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Habitacion> Habitacion { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ReservaDetalle> ReservaDetalle { get; set; }
+        public virtual ICollection<Reserva> Reserva { get; set; }
     }
 }

@@ -556,7 +556,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="ReservaAlquilerEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="ReservaAlquilerEntities2" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Alquiler" EntityType="Self.Alquiler" />
           <EntitySet Name="AlquilerDetalle" EntityType="Self.AlquilerDetalle" />
           <EntitySet Name="Categoria" EntityType="Self.Categoria" />
@@ -615,7 +615,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="ReservaAlquilerModelStoreContainer" CdmEntityContainer="ReservaAlquilerEntities">
+        <EntityContainerMapping StorageEntityContainer="ReservaAlquilerModelStoreContainer" CdmEntityContainer="ReservaAlquilerEntities2">
           <EntitySetMapping Name="Alquiler">
             <EntityTypeMapping TypeName="ReservaAlquilerModel.Alquiler">
               <MappingFragment StoreEntitySet="Alquiler">

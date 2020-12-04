@@ -7,34 +7,23 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Sistema_Reserva_Alquiler_Habi
+namespace Sistema_Reserva_Alquiler_Habi.Models
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class Reserva
+    public partial class TipoHabitacion
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Reserva()
+        public TipoHabitacion()
         {
-            this.Alquiler = new HashSet<Alquiler>();
             this.ReservaDetalle = new HashSet<ReservaDetalle>();
         }
     
         public int Id { get; set; }
         public string Descripcion { get; set; }
-        public Nullable<int> estado { get; set; }
-        public System.DateTime fechaInicio { get; set; }
-        public System.DateTime fechaReserva { get; set; }
-        public System.DateTime fechaFin { get; set; }
-        public int cliente { get; set; }
-        public int sucursal { get; set; }
-        public Nullable<int> tipoReserva { get; set; }
+        public double precioTipoHab { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Alquiler> Alquiler { get; set; }
-        public virtual Cliente Cliente1 { get; set; }
-        public virtual Sucursal Sucursal1 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ReservaDetalle> ReservaDetalle { get; set; }
     }
