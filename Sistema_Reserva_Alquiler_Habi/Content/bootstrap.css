@@ -6755,6 +6755,33 @@ button.close {
   }
 }
 
+.rings a {
+    display: inline-block;
+    position: relative;
+}
+
+    .rings a span {
+        position: center;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: goldenrod;
+        display: none;
+    }
+
+    .rings a:hover {
+        background: black;
+        border-radius: 100%;
+    }
+
+        .rings a:hover span {
+            display: block;
+        }
+
+        .rings a:hover img {
+            opacity: 0.7;
+           
+        }
 
 
 
