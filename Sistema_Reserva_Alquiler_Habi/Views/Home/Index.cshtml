@@ -30,9 +30,8 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">YOUR LOGO</a>
             </div>
-
+            <a class="navbar-brand"><img src="~/Content/img/lo.png" width="120" /></a>
 
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
@@ -41,8 +40,9 @@
                     <li>@Html.ActionLink("Contacto", "Contact", "Home")</li>
                     <li>@Html.ActionLink("Nosotros", "_Nosotros", "Home")</li>
                     <li>@Html.ActionLink("Reservas", "Create", "Reservas")</li>
+                    @Html.Partial("_LoginPartial")
                 </ul>
-                @Html.Partial("_LoginPartial")
+
             </div>
 
 
@@ -52,186 +52,188 @@
     <!--HOME SECTION-->
     <div id="home-sec">
 
+        
+            
+     
+            <div class="container">
+                <div class="row text-center">
+                    <div class="col-md-12">
 
-        <div class="container">
-            <div class="row text-center">
-                <div class="col-md-12">
-                    <span class="head-main">Panda Hotel</span>
-                    <span class="head-main">Panda Hotel</span>
+                        <span class="head-main">Panda Hotel<img  src="~/Content/img/p.png" aling="left" width="90"/>                             </span>
 
-
-
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-    <section id="services-sec">
-        <div class="container">
-            <div class="row ">
-                <div class="text-center g-pad-bottom">
-                    <div class="col-md-4 col-sm-4 alert-info">
-                        <h4>Reserve con confianza</h4>
-                        <p>
-                            Somos concientes de la importancia de la flexibilidad cuando entra en juego la planificación de viajes en el futuro,
-                            y queremos que confíe en nosotros cuando haga una reserva.
-                        </p>
-
-                    </div>
-                    <div class="col-md-4 col-sm-4 alert-success">
-                        <h4>Fantásticas ofertas </h4>
-                        <p>
-                            Comprendemos que, a la hora de planificar los futuros viajes, se necesita flexibilidad.
-                            Puede reservar con confianza, sabiendo que nuestras políticas de cancelación flexible se adaptarán a sus necesidades.
-                        </p>
-
-                    </div>
-
-                    <div class="col-md-4 col-sm-4 alert-danger">
-                        <h4> Salud y seguridad </h4>
-                        <p>
-                            En respuesta a la pandemia de COVID-19, nos hemos asociado con los mejores expertos para implementar
-                            nuevos estándares de seguridad y protocolos y procedimientos operativos y garantizar su seguridad.
-                        </p>
 
                     </div>
                 </div>
             </div>
-
-
-            <div class="row go-marg">
-                <div class="col-md-4 col-sm-4">
-                    <div class="panel panel-default">
-
-                        <div class="panel-body">
-                            <h4 class="adjst" align="center"> Habitación Individual </h4>
-                            <p>
-
-                                <img src="~/Content/img/Habitaciones/habi10.jpg" height="300" width="330" style="border: 2px solid; color: black;" />
-                                <b>Una habitación asignada a una persona.</b>
-                                <br />
-                                Equipamiento de la habitación:
-                                <br />
-                                - Aire acondicionado
-                            </p>
-
-                        </div>
-                    </div>
-                </div>
-
-
-                <div class="col-md-4 col-sm-4">
-                    <div class="panel panel-default">
-
-                        <div class="panel-body">
-                            <h4 class="adjst" align="center"> Habitación Doble </h4>
-                            <p>
-                                <img src="~/Content/img/Habitaciones/habi6.jpg" height="300" width="330" style="border: 2px solid; color: black;" />
-                                <b>Una habitación asignada a dos personas.</b>
-                                <br />
-                                Equipamiento de la habitación:
-                                <br />
-                                - Aire acondicionado
-                            </p>
-
-                        </div>
-                    </div>
-
-                </div>
-                <div class="col-md-4 col-sm-4">
-                    <div class="panel panel-default">
-
-                        <div class="panel-body">
-                            <h4 class="adjst" align="center">Habitación triple</h4>
-                            <p>
-                                <img src="~/Content/img/Habitaciones/habi11.jpg" height="300" width="330" style="border: 2px solid; color: black;" />
-                                <b>Con capacidad para tres personas.</b>
-                                <br />
-                                Equipamiento de la habitación:
-                                <br />
-                                - Aire acondicionado
-                            </p>
-
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-
-
-            <div class="row go-marg">
-                <div class="col-md-4 col-sm-4">
-                    <div class="panel panel-default">
-
-                        <div class="panel-body">
-                            <h4 class="adjst" align="center"> Habitación King </h4>
-                            <p>
-                                <img src="~/Content/img/Habitaciones/habit7.jpg" height="300" width="330" style="border: 2px solid; color: black;" />
-                                <b>Una habitación con una cama king-size. Puede ser ocupado por una o más personas.</b>
-                                <br />
-                                Equipamiento de la habitación:
-                                <br />
-                                - Aire acondicionado
-                            </p>
-
-                        </div>
-                    </div>
-                </div>
-
-
-                <div class="col-md-4 col-sm-4">
-                    <div class="panel panel-default">
-
-                        <div class="panel-body">
-                            <h4 class="adjst" align="center"> Suite Ejecutiva </h4>
-                            <p>
-                                <img src="~/Content/img/Habitaciones/habi12.jpg" height="300" width="330" style="border: 2px solid; color: black;" />
-                                <b>Una habitación con uno o más dormitorios y una sala de estar separada.</b>
-                                <br />
-                                Equipamiento de la habitación:
-                                <br />
-                                - Aire acondicionado
-                            </p>
-
-                        </div>
-                    </div>
-                </div>
-
-
-                <div class="col-md-4 col-sm-4">
-                    <div class="panel panel-default">
-                        <div class="panel-body">
-                            <h4 class="adjst" align="center"> Suite Presidencial </h4>
-                            <p>
-                                <img src="~/Content/img/Habitaciones/habi14.jpg" height="300" width="330" style="border: 2px solid; color: black;"/>
-                                <b>Inclye uno o más dormitorios, una sala de estar bien decorada y los suministros.</b>
-                                <br />
-                                Equipamiento de la habitación:
-                                <br />
-                                - Aire acondicionado
-                            </p>
-
-                        </div>
-                    </div>
-                </div>
-
-
-            </div>
-
-
-
 
         </div>
 
-    </section>
-   
-    <div id="footer">
-        2020 Trabajo Práctico Final C# | Todos los derechos reservados.
 
-    </div>
-    <!-- END FOOTER SECTION -->
-    @Scripts.Render("~/template/js")
+        <section id="services-sec">
+            <div class="container">
+                <div class="row ">
+                    <div class="text-center g-pad-bottom">
+                        <div class="col-md-4 col-sm-4 alert-info">
+                            <h4>Reserve con confianza</h4>
+                            <p>
+                                Somos concientes de la importancia de la flexibilidad cuando entra en juego la planificación de viajes en el futuro,
+                                y queremos que confíe en nosotros cuando haga una reserva.
+                            </p>
+
+                        </div>
+                        <div class="col-md-4 col-sm-4 alert-success">
+                            <h4>Fantásticas ofertas </h4>
+                            <p>
+                                Comprendemos que, a la hora de planificar los futuros viajes, se necesita flexibilidad.
+                                Puede reservar con confianza, sabiendo que nuestras políticas de cancelación flexible se adaptarán a sus necesidades.
+                            </p>
+
+                        </div>
+
+                        <div class="col-md-4 col-sm-4 alert-danger">
+                            <h4> Salud y seguridad </h4>
+                            <p>
+                                En respuesta a la pandemia de COVID-19, nos hemos asociado con los mejores expertos para implementar
+                                nuevos estándares de seguridad y protocolos y procedimientos operativos y garantizar su seguridad.
+                            </p>
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="row go-marg">
+                    <div class="col-md-4 col-sm-4">
+                        <div class="panel panel-default">
+
+                            <div class="panel-body">
+                                <h4 class="adjst" align="center"> Habitación Individual </h4>
+                                <p>
+
+                                    <img src="~/Content/img/Habitaciones/habi10.jpg" height="300" width="330" style="border: 2px solid; color: black;" />
+                                    <b>Una habitación asignada a una persona.</b>
+                                    <br />
+                                    Equipamiento de la habitación:
+                                    <br />
+                                    - Aire acondicionado
+                                </p>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-4 col-sm-4">
+                        <div class="panel panel-default">
+
+                            <div class="panel-body">
+                                <h4 class="adjst" align="center"> Habitación Doble </h4>
+                                <p>
+                                    <img src="~/Content/img/Habitaciones/habi6.jpg" height="300" width="330" style="border: 2px solid; color: black;" />
+                                    <b>Una habitación asignada a dos personas.</b>
+                                    <br />
+                                    Equipamiento de la habitación:
+                                    <br />
+                                    - Aire acondicionado
+                                </p>
+
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-md-4 col-sm-4">
+                        <div class="panel panel-default">
+
+                            <div class="panel-body">
+                                <h4 class="adjst" align="center">Habitación triple</h4>
+                                <p>
+                                    <img src="~/Content/img/Habitaciones/habi11.jpg" height="300" width="330" style="border: 2px solid; color: black;" />
+                                    <b>Con capacidad para tres personas.</b>
+                                    <br />
+                                    Equipamiento de la habitación:
+                                    <br />
+                                    - Aire acondicionado
+                                </p>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+
+                <div class="row go-marg">
+                    <div class="col-md-4 col-sm-4">
+                        <div class="panel panel-default">
+
+                            <div class="panel-body">
+                                <h4 class="adjst" align="center"> Habitación King </h4>
+                                <p>
+                                    <img src="~/Content/img/Habitaciones/habit7.jpg" height="300" width="330" style="border: 2px solid; color: black;" />
+                                    <b>Una habitación con una cama king-size. Puede ser ocupado por una o más personas.</b>
+                                    <br />
+                                    Equipamiento de la habitación:
+                                    <br />
+                                    - Aire acondicionado
+                                </p>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-4 col-sm-4">
+                        <div class="panel panel-default">
+
+                            <div class="panel-body">
+                                <h4 class="adjst" align="center"> Suite Ejecutiva </h4>
+                                <p>
+                                    <img src="~/Content/img/Habitaciones/habi12.jpg" height="300" width="330" style="border: 2px solid; color: black;" />
+                                    <b>Una habitación con uno o más dormitorios y una sala de estar separada.</b>
+                                    <br />
+                                    Equipamiento de la habitación:
+                                    <br />
+                                    - Aire acondicionado
+                                </p>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-4 col-sm-4">
+                        <div class="panel panel-default">
+                            <div class="panel-body">
+                                <h4 class="adjst" align="center"> Suite Presidencial </h4>
+                                <p>
+                                    <img src="~/Content/img/Habitaciones/habi14.jpg" height="300" width="330" style="border: 2px solid; color: black;" />
+                                    <b>Inclye uno o más dormitorios, una sala de estar bien decorada y los suministros.</b>
+                                    <br />
+                                    Equipamiento de la habitación:
+                                    <br />
+                                    - Aire acondicionado
+                                </p>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+
+
+
+
+            </div>
+
+        </section>
+
+        <div id="footer">
+            2020 Trabajo Práctico Final C# | Todos los derechos reservados.
+
+        </div>
+        <!-- END FOOTER SECTION -->
+        @Scripts.Render("~/template/js")
 
 </body>
 </html>
