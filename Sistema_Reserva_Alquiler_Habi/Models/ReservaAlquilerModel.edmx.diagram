@@ -4,20 +4,27 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="fd9168940c174b188894e63a00a5ec4a" Name="Diagram1">
-        <EntityTypeShape EntityType="ReservaAlquilerModel.Alquiler" Width="1.5" PointX="5.75" PointY="7.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="ReservaAlquilerModel.AlquilerDetalle" Width="1.5" PointX="7.75" PointY="7.5" IsExpanded="true" />
+      <Diagram DiagramId="5467858ee9c643ca93a7f0c5c5a6f9e2" Name="Diagram1">
+        <EntityTypeShape EntityType="ReservaAlquilerModel.C__MigrationHistory" Width="1.5" PointX="8.75" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ReservaAlquilerModel.Alquiler" Width="1.5" PointX="8.75" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ReservaAlquilerModel.AlquilerDetalle" Width="1.5" PointX="10.75" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ReservaAlquilerModel.AspNetRoles" Width="1.5" PointX="5.75" PointY="9.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ReservaAlquilerModel.AspNetUserClaims" Width="1.5" PointX="10.25" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ReservaAlquilerModel.AspNetUserLogins" Width="1.5" PointX="10.25" PointY="10.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ReservaAlquilerModel.AspNetUsers" Width="1.5" PointX="8" PointY="8" IsExpanded="true" />
         <EntityTypeShape EntityType="ReservaAlquilerModel.Categoria" Width="1.5" PointX="0.75" PointY="3.625" IsExpanded="true" />
         <EntityTypeShape EntityType="ReservaAlquilerModel.Cliente" Width="1.5" PointX="1.5" PointY="8.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="ReservaAlquilerModel.Consulta" Width="1.5" PointX="8.75" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ReservaAlquilerModel.Consulta" Width="1.5" PointX="10.75" PointY="4.5" IsExpanded="true" />
         <EntityTypeShape EntityType="ReservaAlquilerModel.Habitacion" Width="1.5" PointX="3" PointY="3.5" IsExpanded="true" />
         <EntityTypeShape EntityType="ReservaAlquilerModel.Piso" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="ReservaAlquilerModel.Reserva" Width="1.5" PointX="3.75" PointY="9.5" IsExpanded="true" />
         <EntityTypeShape EntityType="ReservaAlquilerModel.ReservaDetalle" Width="1.5" PointX="6" PointY="3.375" IsExpanded="true" />
         <EntityTypeShape EntityType="ReservaAlquilerModel.Sucursal" Width="1.5" PointX="1.5" PointY="11.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="ReservaAlquilerModel.sysdiagrams" Width="1.5" PointX="8.75" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ReservaAlquilerModel.sysdiagrams" Width="1.5" PointX="12.75" PointY="1.5" IsExpanded="true" />
         <EntityTypeShape EntityType="ReservaAlquilerModel.TipoHabitacion" Width="1.5" PointX="3.75" PointY="14.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="ReservaAlquilerModel.Usuario" Width="1.5" PointX="5.75" PointY="10.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ReservaAlquilerModel.Usuario" Width="1.5" PointX="12.75" PointY="4.5" IsExpanded="true" />
+        <AssociationConnector Association="ReservaAlquilerModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" ManuallyRouted="false" />
+        <AssociationConnector Association="ReservaAlquilerModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" ManuallyRouted="false" />
         <AssociationConnector Association="ReservaAlquilerModel.FK_categoria_Habitacion" ManuallyRouted="false" />
         <AssociationConnector Association="ReservaAlquilerModel.FK_ReservaDetalle_Categoria" ManuallyRouted="false" />
         <AssociationConnector Association="ReservaAlquilerModel.FK_Cliente_Reserva" ManuallyRouted="false" />
@@ -25,6 +32,7 @@
         <AssociationConnector Association="ReservaAlquilerModel.FK_ReservaDetalle_Reserva" ManuallyRouted="false" />
         <AssociationConnector Association="ReservaAlquilerModel.FK_Sucursal_Reserva" ManuallyRouted="false" />
         <AssociationConnector Association="ReservaAlquilerModel.FK_ReservaDetalle_TipoHabitacion" ManuallyRouted="false" />
+        <AssociationConnector Association="ReservaAlquilerModel.AspNetUserRoles" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
