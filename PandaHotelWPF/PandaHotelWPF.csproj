@@ -107,6 +107,7 @@
     <Compile Include="Habitacion.cs">
       <DependentUpon>ReservaAlquiler.tt</DependentUpon>
     </Compile>
+    <Compile Include="MainWindow.cs" />
     <Compile Include="Menu.xaml.cs">
       <DependentUpon>Menu.xaml</DependentUpon>
     </Compile>
