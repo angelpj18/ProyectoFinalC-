@@ -182,8 +182,11 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CategoriasController.cs" />
+    <Compile Include="Controllers\ConsultasController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\PisoesController.cs" />
     <Compile Include="Controllers\ReservasController.cs" />
     <Compile Include="Controllers\_NosotrosController.cs" />
     <Compile Include="Global.asax.cs">
@@ -196,6 +199,18 @@
     <Compile Include="Models\AlquilerDetalle.cs">
       <DependentUpon>ReservaAlquilerModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\AspNetRoles.cs">
+      <DependentUpon>ReservaAlquilerModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AspNetUserClaims.cs">
+      <DependentUpon>ReservaAlquilerModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AspNetUserLogins.cs">
+      <DependentUpon>ReservaAlquilerModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AspNetUsers.cs">
+      <DependentUpon>ReservaAlquilerModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Categoria.cs">
       <DependentUpon>ReservaAlquilerModel.tt</DependentUpon>
     </Compile>
@@ -203,6 +218,9 @@
       <DependentUpon>ReservaAlquilerModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Consulta.cs">
+      <DependentUpon>ReservaAlquilerModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\C__MigrationHistory.cs">
       <DependentUpon>ReservaAlquilerModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Habitacion.cs">
@@ -262,6 +280,7 @@
     <Content Include="Content\img\1.jpg" />
     <Content Include="Content\img\Bios\Angel.jpeg" />
     <Content Include="Content\img\Bios\Edgar.jpeg" />
+    <Content Include="Content\img\Bios\Lean.jpeg" />
     <Content Include="Content\img\Bios\Mabe.jpeg" />
     <Content Include="Content\img\Bios\Mari.PNG" />
     <Content Include="Content\img\Habitaciones\Habi1.png" />
@@ -418,10 +437,24 @@
     <Content Include="Views\Reservas\Details.cshtml" />
     <Content Include="Views\Reservas\Edit.cshtml" />
     <Content Include="Views\Reservas\Index.cshtml" />
+    <Content Include="Views\Consultas\Create.cshtml" />
+    <Content Include="Views\Consultas\Delete.cshtml" />
+    <Content Include="Views\Consultas\Details.cshtml" />
+    <Content Include="Views\Consultas\Edit.cshtml" />
+    <Content Include="Views\Consultas\Index.cshtml" />
+    <Content Include="Views\Pisoes\Create.cshtml" />
+    <Content Include="Views\Pisoes\Delete.cshtml" />
+    <Content Include="Views\Pisoes\Details.cshtml" />
+    <Content Include="Views\Pisoes\Edit.cshtml" />
+    <Content Include="Views\Pisoes\Index.cshtml" />
+    <Content Include="Views\Categorias\Create.cshtml" />
+    <Content Include="Views\Categorias\Delete.cshtml" />
+    <Content Include="Views\Categorias\Details.cshtml" />
+    <Content Include="Views\Categorias\Edit.cshtml" />
+    <Content Include="Views\Categorias\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\_Nosotros\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
