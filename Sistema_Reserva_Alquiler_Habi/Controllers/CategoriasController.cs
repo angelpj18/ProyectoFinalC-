@@ -10,6 +10,7 @@ using Sistema_Reserva_Alquiler_Habi.Models;
 
 namespace Sistema_Reserva_Alquiler_Habi.Controllers
 {
+    [Authorize]
     public class CategoriasController : Controller
     {
         private ReservaAlquilerEntities db = new ReservaAlquilerEntities();
