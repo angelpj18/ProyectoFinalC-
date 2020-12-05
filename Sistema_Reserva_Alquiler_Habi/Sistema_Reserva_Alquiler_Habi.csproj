@@ -262,6 +262,7 @@
     <Content Include="Content\img\1.jpg" />
     <Content Include="Content\img\Bios\Angel.jpeg" />
     <Content Include="Content\img\Bios\Edgar.jpeg" />
+    <Content Include="Content\img\Bios\Lean.jpeg" />
     <Content Include="Content\img\Bios\Mabe.jpeg" />
     <Content Include="Content\img\Bios\Mari.PNG" />
     <Content Include="Content\img\Habitaciones\Habi1.png" />
@@ -421,7 +422,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\_Nosotros\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
