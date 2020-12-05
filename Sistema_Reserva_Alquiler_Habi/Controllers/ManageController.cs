@@ -1,12 +1,11 @@
-﻿using System;
+﻿using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.Owin;
+using Microsoft.Owin.Security;
+using Sistema_Reserva_Alquiler_Habi.Models;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
-using Microsoft.AspNet.Identity;
-using Microsoft.AspNet.Identity.Owin;
-using Microsoft.Owin.Security;
-using Sistema_Reserva_Alquiler_Habi.Models;
 
 namespace Sistema_Reserva_Alquiler_Habi.Controllers
 {
@@ -32,9 +31,9 @@ namespace Sistema_Reserva_Alquiler_Habi.Controllers
             {
                 return _signInManager ?? HttpContext.GetOwinContext().Get<ApplicationSignInManager>();
             }
-            private set 
-            { 
-                _signInManager = value; 
+            private set
+            {
+                _signInManager = value;
             }
         }
 
@@ -333,7 +332,7 @@ namespace Sistema_Reserva_Alquiler_Habi.Controllers
             base.Dispose(disposing);
         }
 
-#region Asistentes
+        #region Asistentes
         // Se usan para protección XSRF al agregar inicios de sesión externos
         private const string XsrfKey = "XsrfId";
 
@@ -384,6 +383,6 @@ namespace Sistema_Reserva_Alquiler_Habi.Controllers
             Error
         }
 
-#endregion
+        #endregion
     }
 }
