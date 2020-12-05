@@ -282,6 +282,10 @@
     <Content Include="Content\img\Bios\Mari.PNG" />
     <Content Include="Content\img\Habitaciones\Habi1.png" />
     <Content Include="Content\img\Habitaciones\habi10.jpg" />
+    <Content Include="Content\img\Habitaciones\habi11.jpg" />
+    <Content Include="Content\img\Habitaciones\habi111.jpg" />
+    <Content Include="Content\img\Habitaciones\habi12.jpg" />
+    <Content Include="Content\img\Habitaciones\habi14.jpg" />
     <Content Include="Content\img\Habitaciones\habi2.jpg" />
     <Content Include="Content\img\Habitaciones\habi3.jpg" />
     <Content Include="Content\img\Habitaciones\habi4.jpg" />
