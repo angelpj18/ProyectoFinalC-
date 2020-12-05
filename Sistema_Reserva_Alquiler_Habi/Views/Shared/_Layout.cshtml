@@ -27,8 +27,7 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Inicio", "Index", "Home")</li>
-                    <li>@Html.ActionLink("Acerca de", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contacto", "Contact", "Home")</li>
+                    <li>@Html.ActionLink("Contacto", "Create", "Consultas")</li>
                     <li>@Html.ActionLink("Nosotros", "_Nosotros", "Home")</li>
 
                     @if (Request.IsAuthenticated)
@@ -36,15 +35,15 @@
                         <li>@Html.ActionLink("Reservas", "Create", "Reservas")</li>
                     }
 
-                        <li>@Html.ActionLink("Contacto_", "Create", "Consultas")</li>
 
-                        @if (Request.IsAuthenticated)
-                        {
-                            <li>@Html.ActionLink("Categorias", "Index", "Categorias")</li>
-                        }
 
-                        <li>@Html.ActionLink("Piso", "Index", "Pisoes")</li>
-                    </ul>
+                    @if (Request.IsAuthenticated)
+                    {
+                        <li>@Html.ActionLink("Categorias", "Index", "Categorias")</li>
+                    }
+
+                    <li>@Html.ActionLink("Piso", "Index", "Pisoes")</li>
+                </ul>
                 @Html.Partial("_LoginPartial")
             </div>
 
