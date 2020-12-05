@@ -1,0 +1,42 @@
+﻿@model Sistema_Reserva_Alquiler_Habi.Models.Categoria
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Categoria</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.descripcion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.descripcion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.precioCategoria)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.precioCategoria)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Habitacion.descripcion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Habitacion.descripcion)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
