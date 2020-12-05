@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
+
 namespace PandaHotelWPF
 {
     /// <summary>
@@ -26,6 +27,7 @@ namespace PandaHotelWPF
 
         private  async void btnAgregar_Click(object sender, RoutedEventArgs e)
         {
+
             Categor p = new Categor();
             p.descripcion = txtCategoria.Text;
             p.precioCategoria = txtPrecio.Text;
@@ -40,6 +42,8 @@ namespace PandaHotelWPF
             List<Categor> lista = await Categor.ObtenerTodos(); //No olvidar el await
             lstCategoria.ItemsSource = lista;
         }
+
+      
 
     }
 }

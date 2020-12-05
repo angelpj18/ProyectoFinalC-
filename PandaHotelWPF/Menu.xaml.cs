@@ -23,5 +23,26 @@ namespace PandaHotelWPF
         {
             InitializeComponent();
         }
+
+        private void MenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow ventana = new MainWindow();
+            ventana.ShowDialog();
+        }
+
+   
+
+
+        private void MenuCategoria_Click(object sender, RoutedEventArgs e)
+        {
+            Categoria ventanaCate = new Categoria();
+            ventanaCate.ShowDialog();
+        }
+
+        private void MenuPiso_Click(object sender, RoutedEventArgs e)
+        {
+            w_Piso ventanaPiso = new Piso();
+            ventanaPiso.ShowDialog();
+        }
     }
 }

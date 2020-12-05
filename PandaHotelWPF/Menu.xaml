@@ -6,5 +6,16 @@
         xmlns:local="clr-namespace:PandaHotelWPF"
         mc:Ignorable="d"
         Title="Menu" Height="450" Width="800">
-    <Grid/>
+
+    <Grid>
+        
+        <MenuItem Header="Desplegar " Margin="0,0,616,371" Click="MenuItem_Click">
+            <MenuItem Header="SubMenu1" Click="MenuItem_Click" />
+            <MenuItem Header="Categoria" x:Name="MenuCategoria" Click="MenuCategoria_Click" />
+            <MenuItem x:Name="MenuPiso" Header="Piso" Click="MenuPiso_Click" />
+            <Separator />
+            <MenuItem Header="Salir" />
+            <MenuItem Header="MenuItem" HorizontalAlignment="Left" Height="100" Width="142"/>
+        </MenuItem>
+    </Grid>
 </Window>
