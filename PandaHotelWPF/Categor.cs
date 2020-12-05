@@ -6,6 +6,7 @@ using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace PandaHotelWPF
 {
     public class Categor
@@ -23,7 +24,7 @@ namespace PandaHotelWPF
                 client.BaseAddress = new Uri("http://localhost:63050/");
                 client.DefaultRequestHeaders.Accept.Clear();
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-                HttpResponseMessage respuesta = await client.GetAsync("api/Personas");
+                HttpResponseMessage respuesta = await client.GetAsync("api/Categoria");
 
                 if (respuesta.IsSuccessStatusCode)
                 {
@@ -36,7 +37,7 @@ namespace PandaHotelWPF
 
 
 
-        public static async Task<bool> AgregarPersona(Categor c)
+        public static async Task<bool> AgregarCategoria(Categor c)
         {           
             using (var client = new HttpClient())
             {
@@ -44,37 +45,11 @@ namespace PandaHotelWPF
                 client.DefaultRequestHeaders.Accept.Clear();
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
-                HttpResponseMessage respuesta = await client.PostAsJsonAsync("api/Personas", c); 
+                HttpResponseMessage respuesta = await client.PostAsJsonAsync("api/Categoria", c); 
                 return respuesta.IsSuccessStatusCode;
             }
         }
 
 
-
-        public static async Task<bool> ModificarPersona(Categor c)
-        {          
-            using (var client = new HttpClient())
-            {
-                client.BaseAddress = new Uri("http://localhost:63050/");
-                client.DefaultRequestHeaders.Accept.Clear();
-                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-                HttpResponseMessage respuesta = await client.PutAsJsonAsync("api/Personas/" + c.Id, c);
-                return respuesta.IsSuccessStatusCode;
-            }
-        }
-
-
-
-        public static async Task<bool> EliminarPersona(Categor c)
-        {
-            using (var client = new HttpClient())
-            {
-                client.BaseAddress = new Uri("http://localhost:63050/");
-                client.DefaultRequestHeaders.Accept.Clear();
-                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-                HttpResponseMessage respuesta = await client.DeleteAsync("api/Personas/" + c.Id);
-                return respuesta.IsSuccessStatusCode;
-            }
-        }
     }
 }
