@@ -136,19 +136,18 @@
     <Compile Include="Usuario.cs">
       <DependentUpon>ReservaAlquiler.tt</DependentUpon>
     </Compile>
-    <None Include="Piso">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </None>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="MainWindow.xaml.cs">
-      <DependentUpon>Piso</DependentUpon>
-      <SubType>Code</SubType>
+    <Compile Include="w_Piso.xaml.cs">
+      <DependentUpon>w_Piso.xaml</DependentUpon>
     </Compile>
     <Page Include="Menu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="w_Piso.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
