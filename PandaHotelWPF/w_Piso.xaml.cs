@@ -58,6 +58,8 @@ namespace PandaHotelWPF
             datos.Piso.Add(piso);
             datos.SaveChanges();
 
-            }
+
+            CargarDatosGrilla();
+        }
         }
     }
