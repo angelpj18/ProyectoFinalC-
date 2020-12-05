@@ -27,16 +27,21 @@
                     <li>@Html.ActionLink("Acerca de", "About", "Home")</li>
                     <li>@Html.ActionLink("Contacto", "Contact", "Home")</li>
                     <li>@Html.ActionLink("Nosotros", "_Nosotros", "Home")</li>
-                    <li>@Html.ActionLink("Reservas", "Create", "Reservas")</li>
-                    <li>@Html.ActionLink("Contacto_", "Create", "Consultas")</li>
 
                     @if (Request.IsAuthenticated)
                     {
-                        <li>@Html.ActionLink("Categorias", "Index", "Categorias")</li>
+                        <li>@Html.ActionLink("Reservas", "Create", "Reservas")</li>
                     }
 
-                    <li>@Html.ActionLink("Piso", "Index", "Pisoes")</li>
-                </ul>
+                        <li>@Html.ActionLink("Contacto_", "Create", "Consultas")</li>
+
+                        @if (Request.IsAuthenticated)
+                        {
+                            <li>@Html.ActionLink("Categorias", "Index", "Categorias")</li>
+                        }
+
+                        <li>@Html.ActionLink("Piso", "Index", "Pisoes")</li>
+                    </ul>
                 @Html.Partial("_LoginPartial")
             </div>
           
