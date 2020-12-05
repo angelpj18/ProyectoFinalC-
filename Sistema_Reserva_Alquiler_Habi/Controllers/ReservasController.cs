@@ -6,8 +6,10 @@ using System.Web.Mvc;
 
 namespace Sistema_Reserva_Alquiler_Habi.Controllers
 {
+    [Authorize]
     public class ReservasController : Controller
     {
+       
         private ReservaAlquilerEntities db = new ReservaAlquilerEntities();
 
         // GET: Reservas
