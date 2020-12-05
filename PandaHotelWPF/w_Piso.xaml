@@ -10,8 +10,8 @@
         <DataGrid x:Name="dgPiso" HorizontalAlignment="Left" Height="121" VerticalAlignment="Top" Width="513" Margin="146,273,0,0"/>
         <Button x:Name="btnAgregar" Content="Agregar&#xD;&#xA;" HorizontalAlignment="Left" VerticalAlignment="Top" Width="106" Margin="328,226,0,0" Height="42" Click="BtnAgregar_Click"/>
         <Label Content="Label" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="182,38,0,0"/>
-        <Label Content="Label" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="182,102,0,0"/>
-        <Label Content="Label" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="182,153,0,0"/>
+        <Label Content="Nro de Piso" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="182,102,0,0"/>
+        <Label Content="Descripcion" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="182,153,0,0"/>
         <TextBox x:Name="txtNroPiso" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Margin="281,105,0,0"/>
         <TextBox x:Name="txtDescripcion" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Margin="281,165,0,0"/>
 
