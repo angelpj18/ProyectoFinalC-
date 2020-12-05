@@ -19,9 +19,27 @@ namespace PandaHotelWPF
     /// </summary>
     public partial class Categoria : Window
     {
-        public Categoria()
+        public  Categoria()
         {
             InitializeComponent();
         }
+
+        private  async void btnAgregar_Click(object sender, RoutedEventArgs e)
+        {
+            Categor p = new Categor();
+            p.descripcion = txtCategoria.Text;
+            p.precioCategoria = txtPrecio.Text;
+          
+
+            await Categor.AgregarCategoria(p); //No olvidar el await
+            ObtenerDatos();
+        }
+
+        private async void ObtenerDatos()
+        {
+            List<Categor> lista = await Categor.ObtenerTodos(); //No olvidar el await
+            lstCategoria.ItemsSource = lista;
+        }
+
     }
 }
